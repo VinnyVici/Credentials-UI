@@ -1,7 +1,7 @@
 {
   "name": "proxy-credentials-ui",
   "version": "0.1.0",
-  "homepage": "https://github.com/VinnyVici/Credentials-UI",
+  "homepage": "https://vinnyvici.github.io/Credentials-UI",
   "private": true,
   "dependencies": {
     "react": "^18.2.0",
