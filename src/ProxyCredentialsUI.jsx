@@ -49,12 +49,11 @@ const ProxyCredentialsUI = () => {
   return (
     <div className="max-w-6xl mx-auto p-6 space-y-8 bg-gray-50 min-h-screen">
       <div className="text-center mb-8">
-        <h1 className="text-3xl font-bold text-gray-800 mb-2">🔐 Proxy Credentials</h1>
-        <p className="text-gray-600">Copy your connection strings with ease</p>
-      </div>
+        <h1 className="text-3xl font-bold text-gray-800 mb-2">Proxy Credentials UI Options</h1>
+          </div>
 
       {/* Drag & Drop Zone */}
-      <div className="bg-white rounded-xl shadow-lg p-6 border-2 border-dashed border-gray-300 hover:border-blue-400 transition-colors">
+      <div className="bg-white rounded-xl shadow-lg p-6">
         <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
           <MousePointer size={20} />
           Drag & Drop Formats
