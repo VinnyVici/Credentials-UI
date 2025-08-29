@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { Copy, Check, Eye, EyeOff, MousePointer, Download } from 'lucide-react';
+import { Copy, Check, Eye, EyeOff } from 'lucide-react';
 
 const ProxyCredentialsUI = () => {
   const [copiedItem, setCopiedItem] = useState(null);
   const [showPassword, setShowPassword] = useState(false);
-  const [draggedFormat, setDraggedFormat] = useState(null);
   
   // Sample proxy data
   const proxyData = {
@@ -27,14 +26,6 @@ const ProxyCredentialsUI = () => {
     }
   };
 
-  const handleDragStart = (e, format, formatName) => {
-    e.dataTransfer.setData('text/plain', format);
-    setDraggedFormat(formatName);
-  };
-
-  const handleDragEnd = () => {
-    setDraggedFormat(null);
-  };
 
   const CopyButton = ({ text, itemId, children, className = "" }) => (
     <button
@@ -52,56 +43,6 @@ const ProxyCredentialsUI = () => {
         <h1 className="text-3xl font-bold text-gray-800 mb-2">Proxy Credentials UI Options</h1>
           </div>
 
-      {/* Drag & Drop Zone */}
-      <div className="bg-white rounded-xl shadow-lg p-6">
-        <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
-          <MousePointer size={20} />
-          Drag & Drop Formats
-        </h2>
-        <div className="grid md:grid-cols-2 gap-4 mb-4">
-          <div
-            draggable
-            onDragStart={(e) => handleDragStart(e, format1, 'host:port:user:pass')}
-            onDragEnd={handleDragEnd}
-            className={`p-4 bg-blue-50 rounded-lg border-2 border-blue-200 cursor-move hover:bg-blue-100 transition-colors ${draggedFormat === 'host:port:user:pass' ? 'opacity-50' : ''}`}
-          >
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-sm font-mono bg-blue-200 px-2 py-1 rounded">host:port:user:pass</span>
-              <CopyButton text={format1} itemId="drag1" className="text-xs px-2 py-1">
-                {copiedItem === 'drag1' ? <Check size={12} /> : <Copy size={12} />}
-              </CopyButton>
-            </div>
-            <div className="font-mono text-sm text-gray-700 break-all mb-2">
-              {showPassword ? format1 : format1.replace(proxyData.pass, '••••••••••••')}
-            </div>
-            <p className="text-xs text-gray-500">👆 Drag this anywhere to copy, or use the copy button</p>
-          </div>
-          
-          <div
-            draggable
-            onDragStart={(e) => handleDragStart(e, format2, 'user:pass@host:port')}
-            onDragEnd={handleDragEnd}
-            className={`p-4 bg-green-50 rounded-lg border-2 border-green-200 cursor-move hover:bg-green-100 transition-colors ${draggedFormat === 'user:pass@host:port' ? 'opacity-50' : ''}`}
-          >
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-sm font-mono bg-green-200 px-2 py-1 rounded">user:pass@host:port</span>
-              <CopyButton text={format2} itemId="drag2" className="text-xs px-2 py-1 bg-green-500 hover:bg-green-600">
-                {copiedItem === 'drag2' ? <Check size={12} /> : <Copy size={12} />}
-              </CopyButton>
-            </div>
-            <div className="font-mono text-sm text-gray-700 break-all mb-2">
-              {showPassword ? format2 : format2.replace(proxyData.pass, '••••••••••••')}
-            </div>
-            <p className="text-xs text-gray-500">👆 Drag this anywhere to copy, or use the copy button</p>
-          </div>
-        </div>
-        <div className="text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-lg">
-            <Download size={16} />
-            <span className="text-sm text-gray-600">Drag the boxes above to any text field</span>
-          </div>
-        </div>
-      </div>
 
       {/* Individual Components */}
       <div className="bg-white rounded-xl shadow-lg p-6">
