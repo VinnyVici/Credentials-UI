@@ -52,9 +52,7 @@ const ProxyCredentialsUI = () => {
             <label className="text-xs text-gray-500 uppercase tracking-wide">Host</label>
             <div className="flex items-center justify-between mt-1">
               <span className="font-mono">{proxyData.host}</span>
-              <CopyButton text={proxyData.host} itemId="host" className="p-1 text-xs">
-                <Copy size={12} />
-              </CopyButton>
+              <CopyButton text={proxyData.host} itemId="host" className="p-1 text-xs" />
             </div>
           </div>
           
@@ -62,9 +60,7 @@ const ProxyCredentialsUI = () => {
             <label className="text-xs text-gray-500 uppercase tracking-wide">Port</label>
             <div className="flex items-center justify-between mt-1">
               <span className="font-mono">{proxyData.port}</span>
-              <CopyButton text={proxyData.port} itemId="port" className="p-1 text-xs">
-                <Copy size={12} />
-              </CopyButton>
+              <CopyButton text={proxyData.port} itemId="port" className="p-1 text-xs" />
             </div>
           </div>
           
@@ -72,9 +68,7 @@ const ProxyCredentialsUI = () => {
             <label className="text-xs text-gray-500 uppercase tracking-wide">Username</label>
             <div className="flex items-center justify-between mt-1">
               <span className="font-mono">{proxyData.user}</span>
-              <CopyButton text={proxyData.user} itemId="user" className="p-1 text-xs">
-                <Copy size={12} />
-              </CopyButton>
+              <CopyButton text={proxyData.user} itemId="user" className="p-1 text-xs" />
             </div>
           </div>
           
@@ -84,9 +78,7 @@ const ProxyCredentialsUI = () => {
               <span className="font-mono">
                 {showPassword ? proxyData.pass : '••••••••••••'}
               </span>
-              <CopyButton text={proxyData.pass} itemId="pass" className="p-1 text-xs">
-                <Copy size={12} />
-              </CopyButton>
+              <CopyButton text={proxyData.pass} itemId="pass" className="p-1 text-xs" />
             </div>
           </div>
         </div>
@@ -101,9 +93,7 @@ const ProxyCredentialsUI = () => {
             <code className="flex-1 text-sm bg-white px-2 py-1 rounded border font-mono break-all">
               {showPassword ? format1 : format1.replace(proxyData.pass, '••••••••••••')}
             </code>
-            <CopyButton text={format1} itemId="inline1" className="text-sm px-2 py-1">
-              {copiedItem === 'inline1' ? <Check size={14} /> : <Copy size={14} />}
-            </CopyButton>
+            <CopyButton text={format1} itemId="inline1" className="text-sm px-2 py-1" />
           </div>
           
           <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
@@ -111,9 +101,7 @@ const ProxyCredentialsUI = () => {
             <code className="flex-1 text-sm bg-white px-2 py-1 rounded border font-mono break-all">
               {showPassword ? format2 : format2.replace(proxyData.pass, '••••••••••••')}
             </code>
-            <CopyButton text={format2} itemId="inline2" className="text-sm px-2 py-1">
-              {copiedItem === 'inline2' ? <Check size={14} /> : <Copy size={14} />}
-            </CopyButton>
+            <CopyButton text={format2} itemId="inline2" className="text-sm px-2 py-1" />
           </div>
         </div>
       </div>
